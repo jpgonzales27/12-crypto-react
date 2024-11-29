@@ -37,9 +37,9 @@ export default function CriptoSearchForm() {
         <label htmlFor="currency">Moneda</label>
         <select name="currency" id="currency" onChange={handleChange} value={pair.currency}>
           <option value="">--- Seleccione ---</option>
-          {cryptocurrencies.map((crypto) => (
-            <option key={crypto.CoinInfo.FullName} value={crypto.CoinInfo.Name}>
-              {crypto.CoinInfo.FullName}
+          {currencies.map((currency) => (
+            <option key={currency.name} value={currency.code}>
+              {currency.name}
             </option>
           ))}
         </select>
@@ -52,6 +52,11 @@ export default function CriptoSearchForm() {
           {currencies.map((currency) => (
             <option key={currency.name} value={currency.code}>
               {currency.name}
+            </option>
+          ))}
+          {cryptocurrencies.map((crypto) => (
+            <option key={crypto.CoinInfo.FullName} value={crypto.CoinInfo.Name}>
+              {crypto.CoinInfo.FullName}
             </option>
           ))}
         </select>
